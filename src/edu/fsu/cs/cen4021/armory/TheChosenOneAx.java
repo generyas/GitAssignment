@@ -58,7 +58,12 @@ class TheChosenOneAx extends BasicWeapon implements Weapon {
                 strB = line;
             }
             else if(!Objects.equals(strA,"") && !Objects.equals(strB,"")){
-                return lineNo - 1;
+                if (Objects.equals(line, strA)){
+                    return lineNo - 1;
+                }
+                if (Objects.equals(line, strB)){
+                    return lineNo - 2;
+                }
             }
         }
         if(!Objects.equals(strA,"") && !Objects.equals(strB,"")) {

@@ -22,6 +22,7 @@ public class RoleGame {
         PrintWeapon("Simple Magic Staff", 10);
         PrintWeapon("The Chosen One Axe", 10);
         PrintWeapon("The Chosen One Axe", 20);
+        PrintWeapon("Ancient Magic Staff", 10);
 
     }
 }
