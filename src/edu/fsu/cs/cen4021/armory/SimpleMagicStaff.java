@@ -3,10 +3,10 @@ package edu.fsu.cs.cen4021.armory;
 /**
  * @author generyas
  */
-class SimpleAxe extends BasicWeapon implements Weapon {
+class SimpleMagicStaff extends BasicWeapon implements Weapon {
 
-    SimpleAxe() {
-        super(60);
+    SimpleMagicStaff() {
+        super(80);
     }
 
     @Override
@@ -16,9 +16,7 @@ class SimpleAxe extends BasicWeapon implements Weapon {
 
     @Override
     public int hit(int armor) {
-        if (armor > 0 && armor < 20) {
-            armor = 0;
-        }
+        armor = (armor * 8) / 10;
         int damage = DAMAGE - armor;
         if (damage < 0) {
             return 0;
