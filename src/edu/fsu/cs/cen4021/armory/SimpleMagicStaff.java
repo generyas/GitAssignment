@@ -16,7 +16,7 @@ class SimpleMagicStaff extends BasicWeapon implements Weapon {
 
     @Override
     public int hit(int armor) {
-        armor = (armor * 8) / 10;
+        armor = (armor * 4) / 5;
         int damage = DAMAGE - armor;
         if (damage < 0) {
             return 0;

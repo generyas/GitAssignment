@@ -50,13 +50,7 @@ class AncientMagicStaff extends BasicWeapon implements Weapon {
             ancientIntList.set(i, (int)pow(ancientIntList.get(i), 2));
         }
         Collections.reverse(ancientIntList);
-        int ancientDamage = ancientIntList.get(1) + ancientIntList.get(3) + ancientIntList.get(7);
 
-        if (ancientDamage > 0){
-            return ancientDamage;
-        }
-        else {
-            return baseDamage;
-        }
+        return ancientIntList.get(0) + ancientIntList.get(2) + ancientIntList.get(6);
     }
 }

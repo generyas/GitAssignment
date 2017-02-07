@@ -8,21 +8,19 @@ import edu.fsu.cs.cen4021.armory.WeaponFactory;
  */
 public class RoleGame {
 
-    public static void PrintWeapon(String weaponName, int armor){
+    private static void PrintWeapon(String weaponName, int armor){
         Weapon aWeapon = WeaponFactory.getWeapon(weaponName);
         System.out.println(weaponName + " has " + aWeapon.hit() + " of damage.");
         System.out.println(weaponName + " was able to do " + aWeapon.hit(armor) + " of damage due to an armor with " + armor + " points.\n");
     }
 
     public static void main(String[] args) {
-        PrintWeapon("Sword", 10);
-        PrintWeapon("Simple Arrow", 10);
-        PrintWeapon("Simple Axe", 10);
+        PrintWeapon("Sword", 20);
+        PrintWeapon("Simple Arrow", 20);
         PrintWeapon("Simple Axe", 20);
-        PrintWeapon("Simple Magic Staff", 10);
-        PrintWeapon("The Chosen One Axe", 10);
+        PrintWeapon("Simple Magic Staff", 20);
         PrintWeapon("The Chosen One Axe", 20);
-        PrintWeapon("Ancient Magic Staff", 10);
-
+        PrintWeapon("Ancient Magic Staff", 20);
+        PrintWeapon("Ritual Web Arrow", 20);
     }
 }
