@@ -1,0 +1,45 @@
+a.
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+	modified:   docs/status.txt
+
+Untracked files:
+	.idea/
+	GitAssignment.iml
+	docs/temp.txt
+	out/
+
+no changes added to commit
+
+Everything up-to-date
+
+b.
+git shortlog
+11
+
+c.
+git log -1 .gitignore
+Wed Jan 25 15:49:34 2017 -0500
+
+d.
+git log --follow src\edu\fsu\cs\cen4021\RoleGame.java
+2
+
+git log --follow src\edu\fsu\cs\cen4021\WeaponFactory.java
+git log --follow src\edu\fsu\cs\cen4021\Weapon.java
+git log --follow src\edu\fsu\cs\cen4021\Sword.java
+git log --follow src\edu\fsu\cs\cen4021\BasicWeapon.java
+0
+
+e.
+Status looks at uncommitted changes to the local repository. Log looks at the commit history.
+
+f.
+git log --follow src\edu\fsu\cs\cen4021\RoleGame.java
+
+g.
+git log --grep='file'
+
+h.
+git log --author=Alice --since=2016-09-01 --until=2016-09-16
