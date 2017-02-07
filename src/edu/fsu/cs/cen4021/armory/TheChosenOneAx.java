@@ -1,12 +1,18 @@
 package edu.fsu.cs.cen4021.armory;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Objects;
+import java.util.Scanner;
+
 /**
  * @author generyas
  */
 class TheChosenOneAx extends BasicWeapon implements Weapon {
 
     TheChosenOneAx() {
-        super(60);
+        super(0);
     }
 
     @Override
@@ -26,8 +32,39 @@ class TheChosenOneAx extends BasicWeapon implements Weapon {
         return damage;
     }
 
-    public int determineDamage(int baseDamage){
+    private int determineDamage(int baseDamage){
+        String strA = "";
+        String strB = "";
+        String line;
+        int lineNo = 0;
+
+        FileReader chosenFileReader;
+        try {
+            chosenFileReader = new FileReader("conf/thechosenone.txt");
+        }
+        catch (FileNotFoundException e) {
+            return baseDamage;
+        }
+        Scanner chosenScanner = new Scanner(chosenFileReader);
+
+        while (chosenScanner.hasNextLine()){
+            line = chosenScanner.nextLine();
+            lineNo++;
+
+            if (Objects.equals(strA,"")){
+                strA = line;
+            }
+            else if (Objects.equals(strB,"") && !Objects.equals(line, strA)){
+                strB = line;
+            }
+            else if(!Objects.equals(strA,"") && !Objects.equals(strB,"")){
+                return lineNo - 1;
+            }
+        }
+        if(!Objects.equals(strA,"") && !Objects.equals(strB,"")) {
+            return lineNo;
+        }
+
         return baseDamage;
     }
-
 }
